@@ -68,45 +68,6 @@ class Main {
             inputs = inputs.map(function(i) {
                 return (255 - i) / 255;
             });
-
-
-
-            // var hidden_canvas = document.createElement('canvas');
-            // hidden_canvas.width = img.width;
-            // hidden_canvas.height = img.height;
-            // var hidden_context = hidden_canvas.getContext('2d');
-            // hidden_context.drawImage(img, 0, 0);
-            // var data = hidden_context.getImageData(0, 0, img.width, img.height).data;
-            
-            // var gray = [];
-            // for (var i=0; i<448; i++) {
-            //     for (var j=0; j<448; j++) {
-            //         var n = 4 * (i * 448 + j);
-            //         gray[i * 448 + j] = (data[n] + data[n+1] + data[n+2]) / 3;
-            //     }
-            // }
-            
-            // var inputs2 = [];
-            // for (var row=0; row<28; row++) {
-            //     for (var col=0; col<28; col++) {
-            //         var sum = 0;
-            //         for (var i=16*row; i<16*(row+1); i++) {
-            //             for (var j=16*col; j<16*(col+1);j++) {
-            //                 sum += gray[i*448+j];
-            //             }
-            //         }
-            //         sum /= 256;
-            //         inputs2[row*28+col] = sum;
-            //     }
-            // }
-
-            // if (Math.min(...inputs2) === 255) {
-            //     return;
-            // }
-            // inputs2 = inputs2.map(function(i) {
-            //     return (255 - i) / 255;
-            // });
-
             $.ajax({
                 url: 'http://localhost:5000/classify',
                 method: 'POST',
@@ -116,17 +77,6 @@ class Main {
                     $('#output').html(data)
                 }
             });
-
-            // $.ajax({
-            //     url: 'http://localhost:5000/classify',
-            //     method: 'POST',
-            //     contentType: 'application/json',
-            //     data: JSON.stringify(inputs2),
-            //     success: (data) => {
-            //         console.log('inputs2: ' + data)
-
-            //     }
-            // });
         };
         img.src = this.canvas.toDataURL();
     }
