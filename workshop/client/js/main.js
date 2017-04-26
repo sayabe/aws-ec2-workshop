@@ -1,5 +1,5 @@
 /* global $ */
-var url_base = 'http://localhost:5000';
+var url_base = /* TODO: Replace with EC2 instance URL */;
 
 class Main {
     constructor() {
