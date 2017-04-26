@@ -1,4 +1,6 @@
 /* global $ */
+var url_base = 'http://localhost:5000';
+
 class Main {
     constructor() {
         this.canvas = document.getElementById('main');
@@ -69,7 +71,7 @@ class Main {
                 return (255 - i) / 255;
             });
             $.ajax({
-                url: 'http://localhost:5000/classify',
+                url: url_base + '/classify',
                 method: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(inputs),
