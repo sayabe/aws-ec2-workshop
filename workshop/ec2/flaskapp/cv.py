@@ -36,7 +36,7 @@ class Classifier:
 	def build_graph(self):
 		pass
 
-class Conv:
+class Conv(Classifier):
 
 	def __init__(self, sess):
 		Classifier.__init__(self, sess)
@@ -86,7 +86,7 @@ class Conv:
 		return self.sess.run(y_out, feed_dict={
 			self.x: [x], self.keep_prob: keep_prob})
 
-class Softmax:
+class Softmax(Classifier):
 
 	def __init__(self, sess):
 		Classifier.__init__(self, sess)
