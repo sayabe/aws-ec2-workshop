@@ -34,7 +34,7 @@ sudo pip install --upgrade pip
 git clone [your repo url]
 cd aws-ec2-workshop/workshop/ec2
 sudo pip install -r requirements.txt
-sudo ln -sT ~/aws-ec2-workshop/ec2/flaskapp /var/www/html/flaskapp
+sudo ln -sT ~/aws-ec2-workshop/workshop/ec2/flaskapp /var/www/html/flaskapp
 sudo cp 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 sudo apachectl restart
 ```
