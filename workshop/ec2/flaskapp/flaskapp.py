@@ -12,13 +12,11 @@ classifier = cv.load_softmax(sess, '/var/www/html/flaskapp/model/model.ckpt')
 def hello_world():
     return 'Hello from flask'
 
-### TODO: Add /classify route ###
-
-# @app.route('/classify', methods=['POST'])
-# def classify():
-#     x = np.array(request.json, dtype=np.uint8)
-#     y = classifier.classify(x)
-#     return jsonify(y.flatten().tolist())
+@app.route('/classify', methods=['POST'])
+def classify():
+    x = np.array(request.json, dtype=np.uint8)
+    y = classifier.classify(x)
+    return jsonify(y.flatten().tolist())
 
 if __name__ == '__main__':
     app.run()
