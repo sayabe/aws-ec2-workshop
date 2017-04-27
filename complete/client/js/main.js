@@ -17,7 +17,7 @@ class Main {
         this.ctx.fillStyle = '#FFFFFF';
         this.ctx.fillRect(0, 0, 448, 448);
         this.drawInput();
-        $('#output td').text('').removeClass('success');
+        $('#output').html("");
     }
     onMouseDown(e) {
         this.canvas.style.cursor = 'default';
@@ -76,7 +76,7 @@ class Main {
                 contentType: 'application/json',
                 data: JSON.stringify(inputs),
                 success: (data) => {
-                    $('#output').html(data)
+                    $('#output').html(data);
                 }
             });
         };
