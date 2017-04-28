@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 sess = tf.InteractiveSession()
-classifier = cv.load_softmax(sess, '/var/www/html/flaskapp/model/model.ckpt')
+classifier = cv.load_conv(sess, '/var/www/html/flaskapp/model_conv/model.ckpt')
 
 @app.route('/')
 def hello_world():
